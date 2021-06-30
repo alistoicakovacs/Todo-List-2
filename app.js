@@ -40,14 +40,6 @@ function deleteListElement() {
 
 
 
-    
-function deleteListElement() {
-
-
-}
-
-
-
 
 
 function addListAfterClick() {
