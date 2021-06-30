@@ -8,12 +8,35 @@ function inputLength() {
     return input.value.length;
 }
 
+/*
 function createListElement() {
     var li = document.createElement("li");
     li.appendChild(document.createTextNode(input.value));
     ul.appendChild(li);
     input.value = "";
     }
+*/
+
+function inputLength() {
+    return input.value.length;
+}
+
+function createListElement() {
+    var li = document.createElement("li");
+    li.appendChild(document.createTextNode(input.value));
+    //start
+    var del = document.createElement("button");
+    del.innerHTML = "delete";
+    li.appendChild(del);
+    del.onclick= deleteListElement();
+    //end
+    ul.appendChild(li);
+    input.value = "";
+    }
+
+function deleteListElement() {
+    console.log("it works like this")
+}
 
 
 
