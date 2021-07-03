@@ -3,11 +3,42 @@ var input = document.getElementById("userinput");
 var ul = document.querySelector("ul")
 var delbtn = document.getElementById("deletebtn");
 
+// store keypress values
+let value = '';
+input.addEventListener('keypress', (val) => {
+    value = value + val.key;
+})
 
-function inputLength() {
+// handle add
+button.addEventListener('click', () => {
+    const value = input.value;
+    if (value.length > 0) {
+        const list = document.createElement('li');
+        const text = document.createTextNode(value);
+
+        list.appendChild(text);
+        ul.appendChild(list);
+
+        input.value = '';
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.innerHTML = 'delete';
+        deleteBtn.addEventListener('click', () => {
+            ul.removeChild(list)
+        });
+
+        list.appendChild(deleteBtn)
+    } else alert('Value missing from input')
+})
+
+// handle clear
+clearBtn.addEventListener('click', () => input.value = '');
+
+
+/*function inputLength() {
     return input.value.length;
 }
-
+*/
 /*
 function createListElement() {
     var li = document.createElement("li");
@@ -16,7 +47,7 @@ function createListElement() {
     input.value = "";
     }
 */
-
+/*
 function inputLength() {
     return input.value.length;
 }
@@ -59,4 +90,4 @@ button.addEventListener("click", addListAfterClick);
 
 
 input.addEventListener("keypress", addListAfterKeypress);
-
+*/
